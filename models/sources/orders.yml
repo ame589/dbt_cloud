@@ -1,0 +1,10 @@
+sources:
+  - name: orders
+    schema: zurich_at_bronze
+    tables:
+      - name: bronze_orders
+        columns:
+          - name: order_id
+            data_tests: [not_null, unique]
+          - name: order_date_time
+            data_tests: [ not_null ]
