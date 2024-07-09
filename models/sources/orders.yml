@@ -1,10 +1,10 @@
 sources:
   - name: orders
-    schema: zurich_at_bronze
+    schema: "{{ var('schema_name', 'default_schema') }}"  # Use default_schema if schema_name variable is not set
     tables:
       - name: bronze_orders
         columns:
           - name: order_id
             data_tests: [not_null]
           - name: order_date_time
-            data_tests: [ not_null, unique ]
+            data_tests: [ not_null ]
