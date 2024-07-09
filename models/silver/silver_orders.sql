@@ -4,7 +4,8 @@ WITH silver_orders AS (
         DATE(order_date_time) AS order_date,
         YEAR(order_date_time) AS order_year,
         MONTH(order_date_time) AS order_month,
-        DAY(order_date_time) AS order_day_of_month
+        DAY(order_date_time) AS order_day_of_month,
+        'test' AS test_field
     FROM {{ source('orders', 'bronze_orders') }}
     )
 
